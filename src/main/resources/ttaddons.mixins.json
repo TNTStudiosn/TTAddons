@@ -3,7 +3,7 @@
   "minVersion": "0.8",
   "package": "com.TNTStudios.ttaddons.mixin",
   "compatibilityLevel": "JAVA_17",
-  "mixins": [
+  "mixins": ["HandcuffMovementMixin"
   ],
   "injectors": {
     "defaultRequire": 1
