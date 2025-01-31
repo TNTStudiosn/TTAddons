@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "ttaddons",
+  "version": "${version}",
+  "name": "TTAddons",
+  "description": "addon para TNTools",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/ttaddons/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "com.TNTStudios.ttaddons.client.TtaddonsClient"
+    ],
+    "main": [
+      "com.TNTStudios.ttaddons.Ttaddons"
+    ]
+  },
+  "mixins": [
+    "ttaddons.mixins.json",
+    {
+      "config": "ttaddons.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
