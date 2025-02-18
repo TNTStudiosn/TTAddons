@@ -2,9 +2,11 @@ package com.TNTStudios.ttaddons;
 
 import com.TNTStudios.ttaddons.commands.HandcuffCommand;
 import com.TNTStudios.ttaddons.commands.HelpCommand;
+import com.TNTStudios.ttaddons.commands.SpectatorStickCommand;
 import com.TNTStudios.ttaddons.commands.ThorCommand;
 import com.TNTStudios.ttaddons.config.ConfigManager;
 import com.TNTStudios.ttaddons.events.ServerEventListener;
+import com.TNTStudios.ttaddons.events.SpectatorStickEvent;
 import com.TNTStudios.ttaddons.network.TcpServer;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.server.MinecraftServer;
@@ -21,6 +23,8 @@ public class Ttaddons implements ModInitializer {
         HelpCommand.register();
         ConfigManager.loadConfig();
         ServerEventListener.register(); // Se registra antes de iniciar el servidor TCP
+        SpectatorStickCommand.register();
+        SpectatorStickEvent.register();
 
         // Iniciamos el servidor TCP solo si ya se ha inicializado el servidor de Minecraft
         if (serverInstance != null) {
